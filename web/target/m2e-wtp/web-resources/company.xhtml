@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+		<h:outputStylesheet library="css" name="table-style.css" />
+</h:head>
+<h:body>
+	<table>
+		<tr>
+			<td><h:commandButton value="Add" action="company_add"/></td>
+		</tr> 
+	</table>
+<h1>List of Companies</h1>
+<h:form>
+<rich:dataTable 
+onRowMouseOver="this.style.backgroundColor='#F1F1F1'"
+onRowMouseOut="this.style.backgroundColor='#{a4jSkin.tableBackgroundColor}'"
+value="#{company.getList()}" 
+var="row"
+cellpadding="0" cellspacing="0" 
+width="700" border="0">
+<f:facet name="tableheader">
+<rich:columnGroup>
+<rich:column colspan="3">
+<h:outputText value="Компании" />
+</rich:column>
+<rich:column breakBefore="true">
+<h:outputText value="Название" />
+</rich:column>
+<rich:column>
+<h:outputText value="Адрес" />
+</rich:column>
+<rich:column>
+<h:outputText value="Телефон" />
+</rich:column>
+</rich:columnGroup>
+</f:facet>
+<rich:column>
+<h:outputText value="#{row.name}"></h:outputText>
+</rich:column>
+<rich:column>
+<h:outputText value="#{row.address}"></h:outputText>
+</rich:column>
+<rich:column>
+<h:outputText value="#{row.telephone}"></h:outputText>
+</rich:column>
+</rich:dataTable>
+</h:form>
+</h:body>
+</html>

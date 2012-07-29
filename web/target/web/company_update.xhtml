@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<h:head>
+	<title>Edit Company</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h4>Editing</h4>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td>
+						<h:inputText label="Name" id="name" value="#{company.name}"
+						required="true"/>
+						<h:message for="name" />
+				</td>
+			</tr>
+			<tr>
+				<td>Telephone:</td>
+				<td>	
+						<h:inputText label="Telephone" id="telephone" value="#{company.telephone}"
+						required="true"/>
+						<h:message for="telephone" />
+				</td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td>	
+						<h:inputText label="Adress" id="address" value="#{company.address}"
+						required="true"/>
+						<h:message for="address" />
+				</td>
+			</tr>
+		</table>
+		<p><h:commandLink value="Update" 
+                                action="#{company.updateOnAction(row)}" /></p>
+	</h:form>
+</h:body>
+</html>
